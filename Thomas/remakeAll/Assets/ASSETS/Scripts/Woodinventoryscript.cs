@@ -14,6 +14,6 @@ public class Woodinventoryscript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        text.GetComponent<Text>().text = "" + max.myInventory.woods;
+        text.GetComponent<Text>().text = "" + max.myInventory.GetGoodQt(Good.TYPE.WOOD);
 	}
 }

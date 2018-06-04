@@ -13,6 +13,6 @@ public class Rockinventory : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        text.GetComponent<Text>().text = "" + max.myInventory.rocks;
+        text.GetComponent<Text>().text = "" + max.myInventory.GetGoodQt(Good.TYPE.ROCK);
     }
 }

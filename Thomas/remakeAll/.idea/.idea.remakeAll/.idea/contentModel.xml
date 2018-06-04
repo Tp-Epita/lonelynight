@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="$USER_HOME$/.Rider2018.1/system/resharper-host/local/Transient/ReSharperHost/v12/SolutionCaches/_remakeAll.-1749336887.00" t="ExcludeRecursive" />
+    <e p="$PROJECT_DIR$" t="IncludeRecursive">
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets/ASSETS" t="Include">
+        <e p="Barre" t="Include">
+          <e p="Inventory" t="Include">
+            <e p="barre_inventaire.cs" t="Include" />
+            <e p="bowItem.cs" t="Include" />
+            <e p="spearItem.cs" t="Include" />
+            <e p="torchItem.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Scripts" t="Include">
+          <e p="AxeCtrl.cs" t="Include" />
+          <e p="Inventory.cs" t="Include" />
+          <e p="LootElements.cs" t="Include" />
+          <e p="PickCtrl.cs" t="Include" />
+          <e p="RockCLASS.cs" t="Include" />
+          <e p="Rockinventory.cs" t="Include" />
+          <e p="TreeCLASS.cs" t="Include" />
+          <e p="Woodinventoryscript.cs" t="Include" />
+          <e p="barreLucasFireRoom" t="Include">
+            <e p="getRocksForBarreLULU.cs" t="Include" />
+            <e p="getWoodForLULU.cs" t="Include" />
+          </e>
+          <e p="changePick.cs" t="Include" />
+          <e p="doorScript.cs" t="Include" />
+          <e p="get_inventory.cs" t="Include" />
+          <e p="lifeBar.cs" t="Include" />
+          <e p="light_script.cs" t="Include" />
+          <e p="setEventText.cs" t="Include" />
+        </e>
+        <e p="Toby Fredson" t="Include">
+          <e p="Rocky Hills Environment - Light Pack" t="Include">
+            <e p="Legacy Project" t="Include">
+              <e p="Legacy Project_Read Me!.txt" t="Include" />
+            </e>
+            <e p="grotteScript.cs" t="Include" />
+          </e>
+        </e>
+        <e p="max" t="Include">
+          <e p="InventoryMax1.cs" t="Include" />
+          <e p="charCtrl.cs" t="Include" />
+        </e>
+        <e p="torch" t="Include">
+          <e p="PinwheelFantasyEffectFreePack1" t="Include">
+            <e p="README 1.txt" t="Include" />
+          </e>
+          <e p="readme.txt" t="Include" />
+        </e>
+      </e>
+      <e p="Assets/Asset_Amoriz" t="Include">
+        <e p="BOAR" t="Include">
+          <e p="Script poursuite boar" t="Include">
+            <e p="script1_Boar.cs" t="Include" />
+            <e p="script2_Boar.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Controle_animaux.cs" t="Include" />
+      </e>
+      <e p="Library" t="ExcludeRecursive" />
+      <e p="Temp" t="ExcludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+      </e>
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="remakeAll.sln" t="IncludeFlat" />
+    </e>
+  </component>
+</project>

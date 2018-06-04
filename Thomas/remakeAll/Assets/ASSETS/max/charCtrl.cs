@@ -16,6 +16,7 @@ public class charCtrl : MonoBehaviour {
     public bool onCollision = true;
 
     public float life = 100;
+    
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -129,12 +130,14 @@ public class charCtrl : MonoBehaviour {
 
     public void addWood(int woods)
     {
-        myInventory.woods += woods;
+        myInventory.AddGood(Good.TYPE.WOOD,woods);
+        //myInventory.woods += woods;
     }
 
     public void addRocks(int rocks)
     {
-        myInventory.rocks += rocks;
+        myInventory.AddGood(Good.TYPE.ROCK,rocks);
+        //myInventory.rocks += rocks;
     }
 
     public bool isplayingAnimation(string animation)
