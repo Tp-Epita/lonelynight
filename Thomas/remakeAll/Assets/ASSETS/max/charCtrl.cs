@@ -23,9 +23,9 @@ public class charCtrl : MonoBehaviour {
         if (PlayerPrefs.HasKey("inventory_DATA"))
         {
             myInventory = JsonUtility.FromJson<Inventory>(PlayerPrefs.GetString("inventory_DATA"));
-            myInventory.bow = JsonUtility.FromJson<Bow>(PlayerPrefs.GetString("inventory_DATA_bow"));
-            myInventory.spear = JsonUtility.FromJson<Spear>(PlayerPrefs.GetString("inventory_DATA_spear"));
-            myInventory.torch = JsonUtility.FromJson<Torch>(PlayerPrefs.GetString("inventory_DATA_torch"));
+            myInventory.Cloths = JsonUtility.FromJson<List<Cloth>>(PlayerPrefs.GetString("inventory_DATA_cloths"));
+            myInventory.Goods = JsonUtility.FromJson<List<Good>>(PlayerPrefs.GetString("inventory_DATA_goods"));
+            myInventory.Weapons = JsonUtility.FromJson<List<Weapon>>(PlayerPrefs.GetString("inventory_DATA_weapons"));
         }
             
         else
@@ -49,20 +49,25 @@ public class charCtrl : MonoBehaviour {
         }
         if (Input.GetKey(KeyCode.F9))
         {
-            myInventory.spear.number += 1;
+            /*myInventory.spear.number += 1;*/
+            myInventory.AddWeapon(Weapon.TYPE.SPEAR,1);
         }
         if (Input.GetKey(KeyCode.F10))
         {
-            myInventory.bow.number += 1;
+            /*myInventory.bow.number += 1;*/
+            myInventory.AddWeapon(Weapon.TYPE.ARC,1);
         }
         if (Input.GetKey(KeyCode.F11))
         {
-            myInventory.torch.number += 1;
+            /*myInventory.torch.number += 1;*/
+            myInventory.AddWeapon(Weapon.TYPE.TORCH,1);
         }
         if (Input.GetKey(KeyCode.F12))
         {
-            myInventory.woods += 1;
-            myInventory.rocks += 1;
+            /*myInventory.woods += 1;
+            myInventory.rocks += 1;*/
+            myInventory.AddGood(Good.TYPE.WOOD,1);
+            myInventory.AddGood(Good.TYPE.ROCK,1);
         }
         if (Input.GetKey(KeyCode.Mouse0))
         {
@@ -153,8 +158,8 @@ public class charCtrl : MonoBehaviour {
     public void saveInventory(Inventory inventory)
     {
         PlayerPrefs.SetString("inventory_DATA", JsonUtility.ToJson(myInventory));
-        PlayerPrefs.SetString("inventory_DATA_spear", JsonUtility.ToJson(myInventory.spear));
-        PlayerPrefs.SetString("inventory_DATA_torch", JsonUtility.ToJson(myInventory.torch));
-        PlayerPrefs.SetString("inventory_DATA_bow", JsonUtility.ToJson(myInventory.bow));
+        PlayerPrefs.SetString("inventory_DATA_cloths", JsonUtility.ToJson(myInventory.Cloths));
+        PlayerPrefs.SetString("inventory_DATA_goods", JsonUtility.ToJson(myInventory.Goods));
+        PlayerPrefs.SetString("inventory_DATA_weapons", JsonUtility.ToJson(myInventory.Weapons));
     }
 }

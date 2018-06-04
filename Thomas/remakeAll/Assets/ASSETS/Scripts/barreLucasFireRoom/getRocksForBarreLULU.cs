@@ -15,6 +15,6 @@ public class getRocksForBarreLULU : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        text.GetComponent<Text>().text = "" + getInv.GetComponent<get_inventory>().myInventory.rocks;
+        text.GetComponent<Text>().text = "" + getInv.GetComponent<get_inventory>().myInventory./*rocks*/GetGoodQt(Good.TYPE.ROCK);
     }
 }

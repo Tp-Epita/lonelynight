@@ -12,7 +12,8 @@ public class spearItem : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        setText("" + max.myInventory.spear.number);
+		setText("" + max.myInventory.GetWeaponQt(Weapon.TYPE.SPEAR));
+        //setText("" + max.myInventory.spear.number);
 	}
 
     public void setText(string Str)

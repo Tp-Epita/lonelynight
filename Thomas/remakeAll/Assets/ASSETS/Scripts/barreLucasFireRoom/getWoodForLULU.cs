@@ -12,6 +12,6 @@ public class getWoodForLULU : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        text.GetComponent<Text>().text = "" + getInv.GetComponent<get_inventory>().myInventory.woods;
+        text.GetComponent<Text>().text = "" + getInv.GetComponent<get_inventory>().myInventory./*woods*/GetGoodQt(Good.TYPE.WOOD);
     }
 }

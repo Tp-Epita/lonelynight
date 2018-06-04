@@ -14,7 +14,8 @@ public class bowItem : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        setText("" + max.myInventory.bow.number);
+        setText("" + max.myInventory.GetWeaponQt(Weapon.TYPE.ARC));
+        //setText("" + max.myInventory.bow.number);
     }
 
     public void setText(string Str)

@@ -18,27 +18,28 @@ public class barre_inventaire : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {        
-        if(max.myInventory.spear.number > 0 && !isHereSpear)
+        if(/*max.myInventory.spear.number*/ max.myInventory.GetWeaponQt(Weapon.TYPE.SPEAR) > 0 && !isHereSpear)
         {
             GameObject mySpear = Instantiate(spear) as GameObject;
-            mySpear.transform.position = childs[max.myInventory.spear.index].transform.position;
-            mySpear.transform.SetParent(childs[max.myInventory.spear.index].transform);
+            
+            mySpear.transform.position = childs[/*max.myInventory.spear.index*/ max.myInventory.GetWeaponId(Weapon.TYPE.SPEAR)].transform.position;
+            mySpear.transform.SetParent(childs[/*max.myInventory.spear.index*/ max.myInventory.GetWeaponId(Weapon.TYPE.SPEAR)].transform);
             mySpear.GetComponent<spearItem>().max = max;
             isHereSpear = true;
         }
-        if (max.myInventory.bow.number > 0 && !isHereBow)
+        if (/*max.myInventory.bow.number*/ max.myInventory.GetWeaponQt(Weapon.TYPE.ARC) > 0 && !isHereBow)
         {
             GameObject myBow = Instantiate(bow) as GameObject;
-            myBow.transform.position = childs[max.myInventory.bow.index].transform.position;
-            myBow.transform.SetParent(childs[max.myInventory.bow.index].transform);
+            myBow.transform.position = childs[max.myInventory.GetWeaponId(Weapon.TYPE.ARC) /*max.myInventory.bow.index*/].transform.position;
+            myBow.transform.SetParent(childs[/*max.myInventory.bow.index*/ max.myInventory.GetWeaponId(Weapon.TYPE.ARC)].transform);
             myBow.GetComponent<bowItem>().max = max;
             isHereBow = true;
         }
-        if (max.myInventory.torch.number > 0 && !isHereTorch)
+        if (/*max.myInventory.torch.number*/ max.myInventory.GetWeaponQt(Weapon.TYPE.TORCH) > 0 && !isHereTorch)
         {
             GameObject myTorch = Instantiate(torch) as GameObject;
-            myTorch.transform.position = childs[max.myInventory.torch.index].transform.position;
-            myTorch.transform.SetParent(childs[max.myInventory.torch.index].transform);
+            myTorch.transform.position = childs[max.myInventory.GetWeaponId(Weapon.TYPE.TORCH) /*max.myInventory.torch.index*/].transform.position;
+            myTorch.transform.SetParent(childs[/*max.myInventory.torch.index*/ max.myInventory.GetWeaponId(Weapon.TYPE.TORCH)].transform);
             myTorch.GetComponent<torchItem>().max = max;
             isHereTorch = true;
         }

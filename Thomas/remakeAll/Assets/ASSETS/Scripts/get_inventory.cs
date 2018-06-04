@@ -18,26 +18,26 @@ public class get_inventory : MonoBehaviour
         if (PlayerPrefs.HasKey("inventory_DATA"))
         {
             myInventory = JsonUtility.FromJson<Inventory>(PlayerPrefs.GetString("inventory_DATA"));
-            myInventory.bow = JsonUtility.FromJson<Bow>(PlayerPrefs.GetString("inventory_DATA_bow"));
-            myInventory.spear = JsonUtility.FromJson<Spear>(PlayerPrefs.GetString("inventory_DATA_spear"));
-            myInventory.torch = JsonUtility.FromJson<Torch>(PlayerPrefs.GetString("inventory_DATA_torch"));
+            myInventory.Cloths = JsonUtility.FromJson<List<Cloth>>(PlayerPrefs.GetString("inventory_DATA_cloths"));
+            myInventory.Goods = JsonUtility.FromJson<List<Good>>(PlayerPrefs.GetString("inventory_DATA_goods"));
+            myInventory.Weapons = JsonUtility.FromJson<List<Weapon>>(PlayerPrefs.GetString("inventory_DATA_weapons"));
         }
 
         else
             myInventory = new Inventory();
 
         PlayerPrefs.SetString("inventory_DATA", JsonUtility.ToJson(myInventory));
-        PlayerPrefs.SetString("inventory_DATA_spear", JsonUtility.ToJson(myInventory.spear));
-        PlayerPrefs.SetString("inventory_DATA_torch", JsonUtility.ToJson(myInventory.torch));
-        PlayerPrefs.SetString("inventory_DATA_bow", JsonUtility.ToJson(myInventory.bow));
+        PlayerPrefs.SetString("inventory_DATA_cloths", JsonUtility.ToJson(myInventory.Cloths));
+        PlayerPrefs.SetString("inventory_DATA_goods", JsonUtility.ToJson(myInventory.Goods));
+        PlayerPrefs.SetString("inventory_DATA_weapons", JsonUtility.ToJson(myInventory.Weapons));
     }
 
     public void saveInventory(Inventory inventory)
     {
         PlayerPrefs.SetString("inventory_DATA", JsonUtility.ToJson(myInventory));
-        PlayerPrefs.SetString("inventory_DATA_spear", JsonUtility.ToJson(myInventory.spear));
-        PlayerPrefs.SetString("inventory_DATA_torch", JsonUtility.ToJson(myInventory.torch));
-        PlayerPrefs.SetString("inventory_DATA_bow", JsonUtility.ToJson(myInventory.bow));
+        PlayerPrefs.SetString("inventory_DATA_cloths", JsonUtility.ToJson(myInventory.Cloths));
+        PlayerPrefs.SetString("inventory_DATA_goods", JsonUtility.ToJson(myInventory.Goods));
+        PlayerPrefs.SetString("inventory_DATA_weapons", JsonUtility.ToJson(myInventory.Weapons));
     }
 
     public Inventory getMyInventory()

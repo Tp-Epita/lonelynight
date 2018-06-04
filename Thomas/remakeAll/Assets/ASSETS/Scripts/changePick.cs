@@ -45,7 +45,7 @@ public class changePick : MonoBehaviour {
             pickImage.enabled = false;
         }
 
-        if (Input.GetKey(spearKeyCode) && max.myInventory.spear.number > 0)
+        if (Input.GetKey(spearKeyCode) && /*max.myInventory.spear.number */ max.myInventory.GetWeaponQt(Weapon.TYPE.SPEAR)> 0)
         {
             Axe.SetActive(false);
             Trick.SetActive(false);
@@ -54,7 +54,7 @@ public class changePick : MonoBehaviour {
             axeImage.enabled = false;
             pickImage.enabled = false;
         }
-        if (Input.GetKey(torchKeyCode) && max.myInventory.torch.number > 0)
+        if (Input.GetKey(torchKeyCode) && /*max.myInventory.torch.number*/ max.myInventory.GetWeaponQt(Weapon.TYPE.SPEAR) > 0)
         {
             Axe.SetActive(false);
             Trick.SetActive(false);
@@ -67,35 +67,40 @@ public class changePick : MonoBehaviour {
 
     public void assignerKeyCode()
     {
-        if (max.myInventory.spear.index == 0)
+        int SpearID = max.myInventory.GetWeaponId(Weapon.TYPE.SPEAR);
+        int BowID = max.myInventory.GetWeaponId(Weapon.TYPE.ARC);
+        int TorchID = max.myInventory.GetWeaponId(Weapon.TYPE.SPEAR);
+        
+        
+        if (SpearID == 0)
             spearKeyCode = KeyCode.Alpha3;
-        if (max.myInventory.spear.index == 1)
+        if (SpearID == 1)
             spearKeyCode = KeyCode.Alpha4;
-        if (max.myInventory.spear.index == 2)
+        if (SpearID == 2)
             spearKeyCode = KeyCode.Alpha5;
-        if (max.myInventory.spear.index == 3)
+        if (SpearID == 3)
             spearKeyCode = KeyCode.Alpha6;
-        if (max.myInventory.spear.index == 4)
+        if (SpearID== 4)
             spearKeyCode = KeyCode.Alpha7;
-        if (max.myInventory.bow.index == 0)
+        if (BowID == 0)
             bowKeyCode = KeyCode.Alpha3;
-        if (max.myInventory.bow.index == 1)
+        if (BowID == 1)
             bowKeyCode = KeyCode.Alpha4;
-        if (max.myInventory.bow.index == 2)
+        if (BowID == 2)
             bowKeyCode = KeyCode.Alpha5;
-        if (max.myInventory.bow.index == 3)
+        if (BowID == 3)
             bowKeyCode = KeyCode.Alpha6;
-        if (max.myInventory.bow.index == 4)
+        if (BowID == 4)
             bowKeyCode = KeyCode.Alpha7;
-        if (max.myInventory.torch.index == 0)
+        if (TorchID == 0)
             torchKeyCode = KeyCode.Alpha3;
-        if (max.myInventory.torch.index == 1)
+        if (TorchID == 1)
             torchKeyCode = KeyCode.Alpha4;
-        if (max.myInventory.torch.index == 2)
+        if (TorchID == 2)
             torchKeyCode = KeyCode.Alpha5;
-        if (max.myInventory.torch.index == 3)
+        if (TorchID == 3)
             torchKeyCode = KeyCode.Alpha6;
-        if (max.myInventory.torch.index == 4)
+        if (TorchID == 4)
             torchKeyCode = KeyCode.Alpha7;
     }
 }

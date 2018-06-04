@@ -15,19 +15,58 @@ public class Inventory {
     private List<Cloth> _cloths;
     private List<Good> _goods;
     private List<Weapon> _weapons;
-    
+
+    #region GetterSetter
+
+    public List<Cloth> Cloths
+    {
+        get { return _cloths; }
+        set { _cloths = value; }
+    }
+
+    public List<Good> Goods
+    {
+        get { return _goods; }
+        set { _goods = value; }
+    }
+
+    public List<Weapon> Weapons
+    {
+        get { return _weapons; }
+        set { _weapons = value; }
+    }
+
+    #endregion
+
+    #region Constructor
+
     public Inventory()
     {
         _cloths = new List<Cloth>();
         _goods = new List<Good>();
         _weapons = new List<Weapon>();
-        
+        Init();
         /*woods = 0;
         rocks = 0;
         bow = new Bow(0,1);
         spear = new Spear(0,3);
         torch = new Torch(0,2);*/
     }
+
+    public void Init()
+    {
+        Weapon _spear = new Weapon(Weapon.TYPE.SPEAR,0);
+        _spear.Index = 0;
+        _weapons.Add(_spear);
+        Weapon _torch = new Weapon(Weapon.TYPE.TORCH,0);
+        _torch.Index = 1;
+        _weapons.Add(_torch);
+        Weapon _arc = new Weapon(Weapon.TYPE.ARC,0);
+        _arc.Index = 2;
+        _weapons.Add(_arc);
+    }
+
+    #endregion
 
 
     #region GetQuantity
@@ -42,8 +81,28 @@ public class Inventory {
         
         return 0;
     }
+
+    public int GetWeaponQt(Weapon.TYPE _type)
+    {
+        foreach (Weapon VARIABLE in _weapons)
+        {
+            if (VARIABLE.Type == _type)
+                return VARIABLE.Quantity;
+        }
+
+        return 0;
+    }
     
-    
+    public int GetWeaponId(Weapon.TYPE _type)
+    {
+        foreach (Weapon VARIABLE in _weapons)
+        {
+            if (VARIABLE.Type == _type)
+                return VARIABLE.Index;
+        }
+
+        return -1;
+    }
 
     #endregion
 
@@ -146,9 +205,16 @@ public class Weapon
 
     private TYPE _type;
     private int _quantity;
+    private int _index;
 
     #region Getter
 
+    public int Index
+    {
+        get { return _index; }
+        set { _index = value; }
+    }
+    
     public TYPE Type
     {
         get { return _type; }

@@ -15,7 +15,8 @@ public class torchItem : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        setText("" + max.myInventory.torch.number);
+        setText("" + max.myInventory.GetWeaponQt(Weapon.TYPE.TORCH));
+        //setText("" + max.myInventory.torch.number);
     }
 
     public void setText(string Str)
