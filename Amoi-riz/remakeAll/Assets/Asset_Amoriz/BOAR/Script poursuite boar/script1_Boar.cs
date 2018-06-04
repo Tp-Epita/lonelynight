@@ -5,7 +5,6 @@ using UnityEngine;
 public class script1_Boar : MonoBehaviour {
 
     private Transform laCible;
-
     /***Variable Detection***/
     public float distanceDetect = 4.0F;
     public bool detecter;

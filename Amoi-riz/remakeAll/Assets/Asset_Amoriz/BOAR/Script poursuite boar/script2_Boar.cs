@@ -14,10 +14,13 @@ public class script2_Boar : MonoBehaviour {
     public bool pause;
     public bool attaque;
 
+    MeshCollider meshCollider;
+
 
     void Awake()
     {
         maTransform = transform;
+        meshCollider = GetComponent<MeshCollider>();
     }
 
     // Use this for initialization
@@ -62,9 +65,18 @@ public class script2_Boar : MonoBehaviour {
 
             if (direction.magnitude > 1)
             {
+                //if (meshCollider.smoothSphereCollisions)
+                //{
+                //
+                //}
                 this.transform.Translate(0, 0, 0.3f);
-                
             }
+        }
+        else
+        {
+            animate.Play("death");
+            // Add Fourures
+            // Add Viande
         }
     }
 
