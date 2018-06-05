@@ -116,16 +116,16 @@ public class charCtrl : MonoBehaviour {
         }
     }
 
-    public void OnCollisionEnter(Collision collision)
+    /*public void OnCollisionEnter(Collision collision)
     {
         onCollision = true;
-    }
+    }*/
 
 
-    public void OnCollisionExit(Collision collision)
+    /*public void OnCollisionExit(Collision collision)
     {
         onCollision = false;
-    }
+    }*/
 
     public void addWood(int woods)
     {

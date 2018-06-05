@@ -19,7 +19,7 @@ public class TreeCLASS : MonoBehaviour {
     {
 
     }
-    public void OnCollisionEnter(Collision collision)
+    /*public void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "AXE" && thisTree.isPossible && Axe.isplayingAnimation("punch"))
         {
@@ -28,7 +28,7 @@ public class TreeCLASS : MonoBehaviour {
             Axe.addWoods(8);
             StartCoroutine(WAIT());
         }
-    }
+    }*/
 
     public void setLife(int life)
     {

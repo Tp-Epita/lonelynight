@@ -19,7 +19,7 @@ public class RockCLASS : MonoBehaviour {
     {
 
     }
-    public void OnCollisionEnter(Collision collision)
+    /*public void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "PICK" && thisRock.isPossible && Pick.isplayingAnimation("punch"))
         {
@@ -28,7 +28,7 @@ public class RockCLASS : MonoBehaviour {
             Pick.addRocks(8);
             StartCoroutine(WAIT());
         }
-    }
+    }*/
     IEnumerator WAIT()
     {
         yield return new WaitForSeconds(1);
