@@ -55,13 +55,13 @@ public class Inventory {
 
     public void Init()
     {
-        Weapon _spear = new Weapon(Weapon.TYPE.SPEAR,0);
+        Weapon _spear = new Weapon(Weapon.TYPE.SPEAR,1);
         _spear.Index = 0;
         _weapons.Add(_spear);
-        Weapon _torch = new Weapon(Weapon.TYPE.TORCH,0);
+        Weapon _torch = new Weapon(Weapon.TYPE.TORCH,1);
         _torch.Index = 1;
         _weapons.Add(_torch);
-        Weapon _arc = new Weapon(Weapon.TYPE.ARC,0);
+        Weapon _arc = new Weapon(Weapon.TYPE.ARC,1);
         _arc.Index = 2;
         _weapons.Add(_arc);
     }
@@ -153,7 +153,7 @@ public class Inventory {
                 break;
             }
         }
-
+        Debug.Log(_isPresent);
         if (!_isPresent)
             _weapons.Add(new Weapon(_type,_quantity));
     }
