@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using ASSETS.Scripts;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,7 +15,7 @@ public class bowItem : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        setText("" + max.myInventory.GetWeaponQt(Weapon.TYPE.ARC));
+        setText("" + max.myInventory.GetStuffQt(Stuff.Type.Bow));
         //setText("" + max.myInventory.bow.number);
     }
 

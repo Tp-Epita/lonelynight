@@ -9,6 +9,8 @@ public class doorScript : MonoBehaviour {
     public setEventText eventText;
     private float distance;
     public GameObject menu;
+
+	public charCtrl maxxxxx;
 	void Start () {
 		
 	}
@@ -22,7 +24,8 @@ public class doorScript : MonoBehaviour {
             eventText.text.SetActive(true);
             if (Input.GetKey(KeyCode.E))
             {
-                SceneManager.LoadScene("plan bunker");
+	            maxxxxx.SaveInventory();
+                SceneManager.LoadScene("Untitled");
             }
         }
         else

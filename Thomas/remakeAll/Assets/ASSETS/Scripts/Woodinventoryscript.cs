@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using ASSETS.Scripts;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,6 +15,6 @@ public class Woodinventoryscript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        text.GetComponent<Text>().text = "" + max.myInventory.GetGoodQt(Good.TYPE.WOOD);
+        text.GetComponent<Text>().text = "" + max.myInventory.GetGoodQt(Ressource.Type.Wood);
 	}
 }

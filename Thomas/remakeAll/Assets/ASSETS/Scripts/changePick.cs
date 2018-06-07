@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using ASSETS.Scripts;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,6 +18,8 @@ public class changePick : MonoBehaviour {
     private KeyCode spearKeyCode;
     private KeyCode bowKeyCode;
     private KeyCode torchKeyCode;
+    
+    
     void Start()
     {
 
@@ -45,7 +48,7 @@ public class changePick : MonoBehaviour {
             pickImage.enabled = false;
         }
 
-        if (Input.GetKey(spearKeyCode) && /*max.myInventory.spear.number */ max.myInventory.GetWeaponQt(Weapon.TYPE.SPEAR)> 0)
+        if (Input.GetKey(spearKeyCode) && /*max.myInventory.spear.number */ max.myInventory.GetStuffQt(Stuff.Type.Spear)> 0)
         {
             Axe.SetActive(false);
             Trick.SetActive(false);
@@ -54,7 +57,7 @@ public class changePick : MonoBehaviour {
             axeImage.enabled = false;
             pickImage.enabled = false;
         }
-        if (Input.GetKey(torchKeyCode) && /*max.myInventory.torch.number*/ max.myInventory.GetWeaponQt(Weapon.TYPE.SPEAR) > 0)
+        if (Input.GetKey(torchKeyCode) && /*max.myInventory.torch.number*/ max.myInventory.GetStuffQt(Stuff.Type.Spear)> 0)
         {
             Axe.SetActive(false);
             Trick.SetActive(false);
@@ -67,9 +70,9 @@ public class changePick : MonoBehaviour {
 
     public void assignerKeyCode()
     {
-        int SpearID = max.myInventory.GetWeaponId(Weapon.TYPE.SPEAR);
-        int BowID = max.myInventory.GetWeaponId(Weapon.TYPE.ARC);
-        int TorchID = max.myInventory.GetWeaponId(Weapon.TYPE.SPEAR);
+        int SpearID = max.myInventory.GetStuffId(Stuff.Type.Spear);
+        int BowID = max.myInventory.GetStuffId(Stuff.Type.Bow);
+        int TorchID = max.myInventory.GetStuffId(Stuff.Type.Torch);
         
         
         if (SpearID == 0)

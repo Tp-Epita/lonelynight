@@ -1,5 +1,10 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
+using ASSETS.Scripts;
 using UnityEngine;
 
 public class charCtrl : MonoBehaviour {
@@ -19,18 +24,13 @@ public class charCtrl : MonoBehaviour {
     
     void Start()
     {
+        myInventory = new Inventory();
         audioSource = GetComponent<AudioSource>();
-        if (PlayerPrefs.HasKey("inventory_DATA"))
-        {
-            myInventory = JsonUtility.FromJson<Inventory>(PlayerPrefs.GetString("inventory_DATA"));
-            myInventory.Cloths = JsonUtility.FromJson<List<Cloth>>(PlayerPrefs.GetString("inventory_DATA_cloths"));
-            myInventory.Goods = JsonUtility.FromJson<List<Good>>(PlayerPrefs.GetString("inventory_DATA_goods"));
-            myInventory.Weapons = JsonUtility.FromJson<List<Weapon>>(PlayerPrefs.GetString("inventory_DATA_weapons"));
-        }
-            
-        else
-            myInventory = new Inventory();
-        //myInventory = new Inventory();
+
+        LoadInventory();
+        
+        
+        /*myInventory.AddWeapon(Weapon.TYPE.SPEAR,0);*/
         animate = GetComponent<Animation>();
         rigidbody = GetComponent<Rigidbody>();
         rigidbody.detectCollisions = true;
@@ -38,7 +38,6 @@ public class charCtrl : MonoBehaviour {
 
     void Update()
     {
-        saveInventory(myInventory);
         if (Input.GetKey(KeyCode.F5) && life> 0)
         {            
             life -= 1;
@@ -49,25 +48,20 @@ public class charCtrl : MonoBehaviour {
         }
         if (Input.GetKey(KeyCode.F9))
         {
-            /*myInventory.spear.number += 1;*/
-            myInventory.AddWeapon(Weapon.TYPE.SPEAR,1);
+            myInventory.AddStuff(Stuff.Type.Spear,1);
         }
-        if (Input.GetKey(KeyCode.F10))
+        if (Input.GetKey(KeyCode.N))
         {
-            /*myInventory.bow.number += 1;*/
-            myInventory.AddWeapon(Weapon.TYPE.ARC,1);
+            myInventory.AddStuff(Stuff.Type.Map,1);
         }
         if (Input.GetKey(KeyCode.F11))
         {
-            /*myInventory.torch.number += 1;*/
-            myInventory.AddWeapon(Weapon.TYPE.TORCH,1);
+            myInventory.AddStuff(Stuff.Type.Torch,1);
         }
         if (Input.GetKey(KeyCode.F12))
         {
-            /*myInventory.woods += 1;
-            myInventory.rocks += 1;*/
-            myInventory.AddGood(Good.TYPE.WOOD,1);
-            myInventory.AddGood(Good.TYPE.ROCK,1);
+            myInventory.AddRessources(Ressource.Type.Wood,5);
+            myInventory.AddRessources(Ressource.Type.Rock,5);
         }
         if (Input.GetKey(KeyCode.Mouse0))
         {
@@ -135,14 +129,12 @@ public class charCtrl : MonoBehaviour {
 
     public void addWood(int woods)
     {
-        myInventory.AddGood(Good.TYPE.WOOD,woods);
-        //myInventory.woods += woods;
+        myInventory.AddRessources(Ressource.Type.Wood,woods);
     }
 
     public void addRocks(int rocks)
     {
-        myInventory.AddGood(Good.TYPE.ROCK,rocks);
-        //myInventory.rocks += rocks;
+        myInventory.AddRessources(Ressource.Type.Rock,rocks);
     }
 
     public bool isplayingAnimation(string animation)
@@ -155,11 +147,20 @@ public class charCtrl : MonoBehaviour {
         return animate[animation].time;
     }
 
-    public void saveInventory(Inventory inventory)
+    public void SaveInventory()
     {
-        PlayerPrefs.SetString("inventory_DATA", JsonUtility.ToJson(myInventory));
-        PlayerPrefs.SetString("inventory_DATA_cloths", JsonUtility.ToJson(myInventory.Cloths));
-        PlayerPrefs.SetString("inventory_DATA_goods", JsonUtility.ToJson(myInventory.Goods));
-        PlayerPrefs.SetString("inventory_DATA_weapons", JsonUtility.ToJson(myInventory.Weapons));
+        BinaryFormatter _form = new BinaryFormatter();
+        FileStream str = File.Create(Application.persistentDataPath + "/" + "ntmgrossepute");
+        _form.Serialize(str, myInventory);
+        str.Close();
+    }
+
+    public void LoadInventory()
+    {
+        BinaryFormatter formatter = new BinaryFormatter();
+        FileStream str = File.Open(Application.persistentDataPath + "/" + "ntmgrossepute",FileMode.Open);
+        Inventory inv = (Inventory) formatter.Deserialize(str);
+        str.Close();
+        myInventory = inv;
     }
 }

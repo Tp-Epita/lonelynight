@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using ASSETS.Scripts;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,7 +13,7 @@ public class spearItem : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		setText("" + max.myInventory.GetWeaponQt(Weapon.TYPE.SPEAR));
+		setText("" + max.myInventory.GetStuffQt(Stuff.Type.Spear));
         //setText("" + max.myInventory.spear.number);
 	}
 
