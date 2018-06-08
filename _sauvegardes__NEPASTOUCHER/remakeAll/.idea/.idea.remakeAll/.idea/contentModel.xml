@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\$PNS000-NUSOHCDF4G7U\.Rider2018.1\system\resharper-host\local\Transient\ReSharperHost\v12\SolutionCaches\_remakeAll.729344486.00" t="ExcludeRecursive" />
+    <e p="D:\Unity\lonelynight\_sauvegardes__NEPASTOUCHER\remakeAll" t="IncludeRecursive">
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets\Asset_Amoriz" t="Include">
+        <e p="BOAR" t="Include">
+          <e p="Script poursuite boar" t="Include">
+            <e p="script1_Boar.cs" t="Include" />
+            <e p="script2_Boar.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Controle_animaux.cs" t="Include" />
+      </e>
+      <e p="Assets\Assets" t="Include">
+        <e p="Barre" t="Include">
+          <e p="Inventory" t="Include">
+            <e p="barre_inventaire.cs" t="Include" />
+            <e p="bowItem.cs" t="Include" />
+            <e p="spearItem.cs" t="Include" />
+            <e p="torchItem.cs" t="Include" />
+          </e>
+        </e>
+        <e p="max" t="Include">
+          <e p="charCtrl.cs" t="Include" />
+          <e p="InventoryMax1.cs" t="Include" />
+        </e>
+        <e p="Scripts" t="Include">
+          <e p="changePick.cs" t="Include" />
+          <e p="get_inventory.cs" t="Include" />
+          <e p="setEventText.cs" t="Include" />
+        </e>
+      </e>
+      <e p="Library" t="ExcludeRecursive" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="remakeAll.sln" t="IncludeFlat" />
+      <e p="Temp" t="ExcludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+      </e>
+    </e>
+  </component>
+</project>
